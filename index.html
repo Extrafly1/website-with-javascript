@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>WEB</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" media="screen" href="css/style.css">
+    <link rel="stylesheet" href="css/style2.css">
+</head>
+
+<body onLoad="initClock()">
+    <div id="particles-js"></div>
+
+    <header>
+
+        <div class="header">
+            <input type="text" placeholder="N6 only text - only text>>>" class="only_text">
+        </div>
+        <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu">
+        <label for="openSidebarMenu" class="sidebarIconToggle">
+            <div>
+                <div class="spinner diagonal part-1"></div>
+                <div class="spinner horizontal"></div>
+                <div class="spinner diagonal part-2"></div>
+            </div>
+            
+        </label>
+        <div id="sidebarMenu">
+            <ul class="sidebarMenuInner">
+                <div class="tabPanel-widget">
+                    <h2 class="tabButton" data-target="section1">N1 clock</h2>
+                    <h2 class="tabButton" data-target="section2">N2 calendar</h2>
+                    <h2 class="tabButton" data-target="section3">fon</h2>
+                    <h2 class="tabButton" data-target="section4">N12 jQuery</h2>
+                    <h2 class="tabButton" data-target="section5">N11 mineswiper</h2>
+                    <h2 class="tabButton" data-target="section6">N7 Candis</h2>
+                    <h2 class="tabButton" data-target="section7">N8 image or text</h2>
+                    <h2 class="tabButton" data-target="section8">N9-10 form</h2>
+                    <h2 class="tabButton" data-target="section9">N5 delete</h2>
+                    <h2 class="tabButton" id="info"></h2>
+                    <button onclick="toggleMusic()" class="btn_mp3 tabButton"><h2 id="anim">N4_(ツ)_/¯</h2></button>
+                    <audio id="myAudio" loop>
+                        <source src="mp3/hugesoundru__spacex-18.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+            </ul>
+        </div>
+
+    </header>
+    <main>
+        <div class="tabContent">
+            <section class="tabSection style" id="section1" style="z-index: 1;">
+                <div id="timedate">
+                    <a id="w">Sunday</a>,
+                    <a id="d">1</a>,
+                    <a id="mon">January</a>,
+                    <a id="y">0</a><br />
+                    <a id="h">12</a> /
+                    <a id="m">00</a> /
+                    <a id="s">00</a>
+                </div>
+            </section>
+            <section class="tabSection" id="section2" style="margin-top: 150px;">
+                <div class="calendar-wrapper">
+                    <button id="btnPrev" type="button"></button>
+                    <button id="btnNext" type="button"></button>
+                    <div id="divCal"></div>
+                </div>
+            </section>
+            <section class="tabSection" id="section3"></section>
+            <section class="tabSection" id="section4" style="z-index: 1;">
+                <div id="container">
+                    <div id="tasks">
+                        <div id="notification">Sorry, your task list is empty.</div>
+                        <ul id="tasksList">
+                        </ul>
+                    </div>
+
+                    <div id="footer">
+                        <input id="taskInput" type="text" placeholder="Your task" />
+                        <button id="taskAdd">+</button>
+                    </div>
+                </div>
+            </section>
+            <section class="tabSection" id="section5" style="z-index: 1;">
+                <div id="board"></div>
+            </section>
+            <section class="tabSection" id="section6" style="margin-top: 150px; z-index: 1; background-color: rgba(221, 221, 221, 0.419);">
+                <button onclick="toggleMenu()" class="tabButton_toggle">Toggle Menu</button>
+
+                <ul id="menu">
+                    <li onclick="fadeOutItem(this)" class="tab_toggle">Candy 1</li>
+                    <li onclick="fadeOutItem(this)" class="tab_toggle">Candy 2</li>
+                    <li onclick="fadeOutItem(this)" class="tab_toggle">Candy 3</li>
+                    <li onclick="fadeOutItem(this)" class="tab_toggle">Candy 4</li>
+                    <li onclick="fadeOutItem(this)" class="tab_toggle">Candy 5</li>
+                    <li onclick="fadeOutItem(this)" class="tab_toggle">Candy 6</li>
+                </ul>
+
+                <p id="message" style="display: none;" class="tab_toggle">Сладости закончились</p>
+            </section>
+            <section class="tabSection" id="section7" style="margin-top: 150px; z-index: 1; background-color: rgba(221, 221, 221, 0.419);">
+                <div class="container">
+                    <img class="image" src="img/untitled.jpg" alt="Your Image">
+                    <div class="text">Code not to live,<br> but live to code!</div>
+                </div>
+            </section>
+            <section class="tabSection" id="section8" style="margin-top: 100px; z-index: 1;">
+                <form>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required><br><br>
+
+                    <label for="specialty">Specialty:</label>
+                    <select id="specialty" name="specialty" required>
+                        <option value="developer">Developer</option>
+                        <option value="designer">Designer</option>
+                        <option value="manager">Manager</option>
+                    </select><br><br>
+
+                    <label for="bio">Biography:</label>
+                    <textarea id="bio" name="bio" rows="4" cols="30" required></textarea><br><br>
+
+                    <label for="gender">Gender:</label>
+                    <select id="gender" name="gender" required>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select><br><br>
+
+                    <label for="photo">Photo:</label>
+                    <input type="file" id="photo" name="photo" accept="image/*"><br><br>
+
+                    <label for="firstname">First Name:</label>
+                    <input type="text" id="firstname" name="firstname" required><br><br>
+
+                    <label for="middlename">Middle Name:</label>
+                    <input type="text" id="middlename" name="middlename"><br><br>
+
+                    <label for="lastname">Last Name:</label>
+                    <input type="text" id="lastname" name="lastname" required><br><br>
+
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required><br><br>
+
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required><br><br>
+
+                    <button type="button" onclick="validateForm()">Submit</button>
+                </form>
+            </section>
+            <section class="tabSection" id="section9" style="margin-top: 150px; z-index: 1; background-color: rgba(221, 221, 221, 0.419);">
+                <h2>Динамическое создание и удаление ячеек таблицы</h2>
+                <button id="createCellBtn">Create Cell</button>
+                <button id="deleteCellBtn">Delete Cell</button>
+                <table id="myTable">
+                    <tr>
+                        <td>Пример</td>
+                    </tr>
+                </table>
+            </section>
+        </div>
+
+    </main>
+    <!--scripts-->
+    <script src="js/ValidForm.js "></script>
+    <script src="js/mousemove.js "></script>
+    <script src="js/ToggleMenu.js "></script>
+    <script src="js/calendar.js "></script>
+    <script src="js/clock_js.js "></script>
+    <script src="js/other.js "></script>
+    <script src="js/paralax.js "></script>
+    <script src="js/particles.js "></script>
+    <script src="js/app.js "></script>
+    <script src="js/jQuery.js "></script>
+    <script src="js/list.js "></script>
+    <script src="js/mineswiper.js "></script>
+    <script src="js/audio.js "></script>
+    <script src="js/animate.js "></script>
+    <script src="js/indeldom.js "></script>
+</body>
+
+</html>
